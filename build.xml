@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="com.jme3.ai" default="netbeans" basedir=".">
+    <description>Builds, tests, and runs the project com.jme3.ai.</description>
+    <import file="nbproject/build-impl.xml"/>
+    <target name="init" depends="basic-init,files-init,build-init,-javac-init,-build-subproject"/>
+    <target name="-build-subproject">
+        <ant dir="../AI" inheritall="false" inheritrefs="false" target="jar">
+            <property name="user.properties.file" location="${user.properties.file}"/>
+        </ant>
+        <copy file="../AI/dist/jME3-ai.jar" todir="release/libs"/>
+    </target>
+</project>
