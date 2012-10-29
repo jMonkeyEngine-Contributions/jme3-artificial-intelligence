@@ -7,9 +7,7 @@
     <import file="nbproject/build-impl.xml"/>
     <target name="init" depends="basic-init,files-init,build-init,-javac-init,-build-subproject"/>
     <target name="-build-subproject">
-        <ant dir="../AI" inheritall="false" inheritrefs="false" target="jar">
-            <property name="user.properties.file" location="${user.properties.file}"/>
-        </ant>
+        <ant dir="../AI" inheritall="false" inheritrefs="false" target="jar"/>
         <copy file="../AI/dist/jME3-ai.jar" todir="release/libs"/>
     </target>
 </project>
