@@ -9,6 +9,9 @@
     <target name="-build-subproject">
         <ant dir="./AI" inheritall="false" inheritrefs="false" target="clean"/>
         <ant dir="./AI" inheritall="false" inheritrefs="false" target="jar"/>
+        <ant dir="./AI" inheritall="false" inheritrefs="false" target="javadoc"/>
+        <zip basedir="./AI/dist/javadoc" file="release/libs/jME3-ai-javadoc.zip"/>
+        <zip basedir="./AI/src" file="release/libs/jME3-ai-sources.zip"/>
         <copy file="./AI/dist/jME3-ai.jar" todir="release/libs"/>
     </target>
 </project>
